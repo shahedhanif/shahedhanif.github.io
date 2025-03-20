@@ -13,14 +13,19 @@
       font-family: Arial, sans-serif;
     }
     
+    .iframe-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    
     iframe {
       border: none;
       width: 100%;
       height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
     }
     
     .loading-container {
@@ -60,11 +65,12 @@
     <div class="loader"></div>
   </div>
   
-  <iframe src="https://drive.google.com/file/d/1jnbEbXQRj4105SdmQrtVKkKuwphMZk-N/preview?embedded=true" 
-          width="100%" height="100%" 
-          allow="autoplay" 
-          allowfullscreen
-          onload="document.getElementById('loading').classList.add('hidden')"></iframe>
+  <div class="iframe-container">
+    <iframe src="https://docs.google.com/viewer?url=https://drive.google.com/uc?export=download%26id=1jnbEbXQRj4105SdmQrtVKkKuwphMZk-N&embedded=true" 
+            allow="autoplay" 
+            allowfullscreen
+            onload="document.getElementById('loading').classList.add('hidden')"></iframe>
+  </div>
 
   <script>
     // If iframe fails to load after 10 seconds, hide the loader anyway
